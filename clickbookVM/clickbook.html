@@ -252,6 +252,17 @@
         </div>
     </div>
     <script type="text/javascript">
+        //判断是否领取过红包
+        function isget(){
+            $.post("/h5Service/givenCouponCount.do?key=170113&code=001", function (result) {
+            if(result.success == true && result.data.count ==0){
+                document.getElementById('coupon-btn').style.display=block;
+                return;
+            }
+            document.getElementById('coupon-btn').style.display='none';
+            },"json");
+        }
+        window.onload=isget()
         //导航栏js
         var nav = document.querySelector('.nav');
         var list = document.querySelector('.nav-list');
