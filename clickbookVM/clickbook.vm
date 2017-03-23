@@ -257,7 +257,7 @@
             $.post("/h5Service/givenCouponCount.do?key=170113&code=001", function (result) {
             if(result.success == true ){
                 if (result.data.count == 0) {
-                    document.getElementById('coupon-btn').style.display=block;
+                    document.getElementById('coupon-btn').style.display='block';
                     return;
                 }
                 
